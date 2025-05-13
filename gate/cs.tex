@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{xcolor,circuitikz}
+\usepackage{pgfplots}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{datetime2}
+\begin{document}
+\pagestyle{empty} % Start with empty page style
+
+\begin{figure}[h!]
+    \begin{minipage}{0.45\textwidth}  % Set the width of the image
+        \includegraphics[width=\textwidth]{IMG-20250327-WA0018.jpg}  % Replace 'image.png' with your image file name
+    \end{minipage} \hfill
+    \begin{minipage}{0.45\textwidth}  % Set the width of the text block
+        \textbf{Name : Anil kumar B} \\
+    \textbf{Batch : cometfwc002} \\
+  \textbf{Date : 27th march 2025} 
+    \end{minipage}
+\end{figure}
+\begin{center}
+    {\LARGE \textbf{\textcolor{blue}{GATE Question Paper 2018, CS Question Number 49}}}
+\end{center}
+
+ 
+Q.49 Consider the minterm list form of a Boolean function \( F \) given below.
+\[
+F(P, Q, R, S) = \sum m(0, 2, 5, 7, 9, 11) + d(3, 8, 10, 12, 14)
+\]
+Here, \( m \) denotes a minterm and \( d \) denotes a don't care term. The number of essential prime implicants of the function \( F \) is \_\_\_\_.
+\begin{center}
+    {\LARGE \texfot{\textcolor{blue}{ANSWER}}}
+\end{center}
+\section*{\textbf{\textcolor{blue}{1. Create the 4 variable K-map:}}}
+
+We have a function $F(P, Q, R, S)$ with 4 variables, so we'll need a 4-variable K-map.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{RS} & 00 & 01 & 11 & 10 \\ \hline
+PQ 00 & $m_0$ & $m_1$ & $m_3$ & $m_2$ \\ \hline
+PQ 01 & $m_4$ & $m_5$ & $m_7$ & $m_6$ \\ \hline
+PQ 11 & $m_{12}$ & $m_{13}$ & $m_{15}$ & $m_{14}$ \\ \hline
+PQ 10 & $m_8$ & $m_9$ & $m_{11}$ & $m_{10}$ \\ \hline
+\end{tabular}
+\end{center}
+
+\section*{\textfot{\textcolor{blue}{2. Fill in the minterms (m) and don't cares (d):}}}
+
+\begin{itemize}
+    \item Minterms (m): 0, 2, 5, 7, 9, 11
+    \item Don't cares (d): 3, 8, 10, 12, 14
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{RS} & 00 & 01 & 11 & 10 \\ \hline
+PQ 00 & 1 & 0 & 1 & 1 \\ \hline
+PQ 01 & 0 & 1 & 1 & 0 \\ \hline
+PQ 11 & d & 0 & 0 & d \\ \hline
+PQ 10 & d & 1 & 1 & d \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{table}[h]
+\centering
+\caption{\textcolor{blue}{k map for(p,q,r,s)}} 
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+  & 00$(r'\.s')$ & 01$(r'\.s)$ & 11$(rs)$ & 10$(r\.s')$ \\ \hline  
+00$(p'\.q')$ & 1 &   & X & 1 \\ \hline
+01$(p'\.q)$ &   & 1 & 1 &  \\ \hline
+11$(pq)$ & X &   &   & X \\ \hline
+10$(p'\.q)$ & X & 1 & 1 & X \\ \hline
+\end{tabular}
+\end{table}
+\section*{\textfot{\textcolor{blue}{3. Identify the prime implicants:}}}
+
+\textbf{Prime implicant:} A group of 1's (or 1's and don't cares) that cannot be further combined into a larger group.
+
+Let's look for the largest possible groups:
+
+\begin{itemize}
+    \item \textbf{Group 1:} The 1's in cells 8, 9, 10 and 11 can be combined: $PQ'$
+    \item \textbf{Group 2:} The 1's in cells 0, 2, 8 and 10 can be combined: $PS'$
+    \item \textbf{Group 3:} The 1's in cells 2, 3, 10 and 11 can be combined: $RQ'$
+\end{itemize}
+
+\section*{\textfot{\textcolor{blue}{4. Identify the essential prime implicants:}}}
+
+\textbf{Essential prime implicant:} A prime implicant that covers at least one minterm that is not covered by any other prime implicant.
+
+Let's check each minterm:
+
+\begin{itemize}
+    \item \textbf{Minterm 0:} Covered only by $P'Q'S'$ (Essential)
+    \item \textbf{Minterm 2:} Covered only by $P'Q'S'$ (Essential)
+    \item \textbf{Minterm 9:} Covered only by $PQ'S$ (Essential)
+\end{itemize}
+
+\textbf{Therefore, all for all three implicants are essential.}
+
+\textbf{Answer:} The number of essential prime implicants of the function $F$ is 3.
+
+\end{document}
