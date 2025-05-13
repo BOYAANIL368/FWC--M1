@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+%\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage[none]{hyphenat}
+\usepackage[english]{babel}
+\usepackage{amsmath}   % for having text in math mode
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{multicol}
+	%New macro definitions
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\let\vec\mathbf
+\begin{document}    
+\begin{center}
+\textbf\large{CHAPTER-4 \\ DETERMINANTS}
+\end{center}
+
+\section*{EXERCISE - 4.1}
+																							
+Evaluate the determinants in Exercises 1 and 2.
+\begin{enumerate}
+    \item 
+    $\begin{vmatrix} 2 & 4 \\ -5 & -1 \end{vmatrix}$
+    \item 
+        \begin{enumerate}[label=(\roman*)]
+        \begin{multicols}{2}
+        \item 
+        $\begin{vmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{vmatrix}$ \quad
+        \item
+        $\begin{vmatrix} x^2-x+1 & x-1 \\ x+1 & x+1 \end{vmatrix}$
+       \end{multicols}{2}
+       \end{enumerat}																							
+  
+
+\item if $A = \begin{bmatrix} 1 & 2 \\ 4 & 2 \end{bmatrix}$, then show that $|2A| = 4|A|$.
+
+\item If $A = \begin{bmatrix} 1 & 0 & 1 \\ 0 & 1 & 2 \\ 0 & 0 & 4 \end{bmatrix}$, then show that $|3A| = 27|A|$.
+
+\item Evaluate the determinants
+\begin{enumerate}[label=\roman*)]
+    \begin{multicols}{2}
+    \item 
+    $\begin{vmatrix} 3 & -1 & -2 \\ 0 & 0 & -1 \\ 3 & -5 & 0 \end{vmatrix}$\quad
+    \item
+    $\begin{vmatrix} 3 & -4 & 5 \\ 1 & 1 & -2 \\ 2 & 3 & 1 \end{vmatrix}$
+    \end{multicols}{2} 
+    \begin{multicols}{2}
+    \item
+    $\begin{vmatrix} 0 & 1 & 2 \\ -1 & 0 & -3 \\ -2 & 3 & 0 \end{vmatrix}$\quad
+    \item
+    $\begin{vmatrix} 2 & -1 & -2 \\ 0 & 2 & -1 \\ 3 & -5 & 0 \end{vmatrix}$
+    \end{multicols}{2}
+\end{enumerate}
+
+ \item If $A = \begin{bmatrix} 1 & 1 & -2 \\ 2 & 1 & -3 \\ 5 & 4 & -9 \end{bmatrix}$, find $|A|$.
+
+\item Find values of $x$, if\\
+\begin{enumerate}[label=\roman*)]
+    \begin{multcols}{2}
+    \item
+    $\begin{vmatrix} 2 & 4 \\ 5 & 1 \end{vmatrix} = \begin{vmatrix} 2x & 4 \\ 6 & x \end{vmatrix}$\quad
+    \item
+    $\begin{vmatrix} 2 & 3 \\ 4 & 5 \end{vmatrix} = \begin{vmatrix} x & 3 \\ 2x & 5 \end{vmatrix}$
+    \end{multicols}{2}
+\end{enumerate}
+
+
+\item If $\begin{vmatrix} x & 2 \\ 18 & x \end{vmatrix} = \begin{vmatrix} 6 & 2 \\ 18 & 6 \end{vmatrix}$, then $x$ is equal to\\
+  \begin{enumerate}[label=\Alph*)]
+  \item  $\pm 6$	\quad \item $6$ \quad \item  $-6$ \quad \item $0$
+  \end{enumerate}
+\end{enumerate}
+\end{document}
